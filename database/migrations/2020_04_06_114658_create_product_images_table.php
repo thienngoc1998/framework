@@ -15,6 +15,9 @@ class CreateProductImagesTable extends Migration
     {
         Schema::create('product_images', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('id_product')->unsigned();
+            $table->foreign('id_product')->references('id')->on('products');
             $table->timestamps();
         });
     }

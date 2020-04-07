@@ -15,6 +15,11 @@ class CreateCartDetailsTable extends Migration
     {
         Schema::create('cart_details', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('number');
+            $table->integer('id_cart')->unsigned();
+            $table->foreign('id_cart')->references('id')->on('carts');
+            $table->integer('id_product')->unsigned();
+            $table->foreign('id_product')->references('id')->on('products');
             $table->timestamps();
         });
     }
