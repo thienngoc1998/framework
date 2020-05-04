@@ -13,28 +13,28 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <a href="#"><i class="fa fa-dashboard fa-fw"></i> {{__('backend.dashboard')}}</a>
             </li>
             <li>
-                <a href="{{route('category')}}"><i class="fa fa-bar-chart-o fa-fw"></i> Category<span class="fa arrow"></span></a>
+                <a href="{{route('category')}}"><i class="fa fa-bar-chart-o fa-fw"></i> {{__('backend.category')}}<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{route('category')}}">List Category</a>
+                        <a href="{{route('category')}}">{{__('backend.title')}}</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-cube fa-fw"></i> Product<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-cube fa-fw"></i> {{__('backend.product')}}<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{route('product')}}">List Product</a>
+                        <a href="{{route('product')}}">{{__('backend.title')}}</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
             <li>
-                <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-users fa-fw"></i> {{__('backend.user')}}<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="#">List User</a>

@@ -1,37 +1,89 @@
 @extends('backend.layout.index')
 @section('title')
-    Sửa loại sản phẩm
+    Sửa sản phẩm
 @endsection
 @section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Category
-                    <small>Edit</small>
+                <h1 class="page-header">{{__('backend.product')}}
+                    <small>Sửa</small>
                 </h1>
             </div>
-            <!-- Page Content -->
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                <form action="{{route('store-category')}}" method="POST">
+                <form action="{{route('store-product')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label>Category Name :</label>
-                        <input class="form-control" name="name" />
+                        <label>Category</label>
+                        <select name="type_category" class="form-control">
+                            <option value="">Choose category</option>
+                            @foreach($category as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label>Active : </label>
-
-                        <input type="radio" name="active" value="1"/> Active
-                        <input  type="radio" name="active" value="0"/> Unactivated
+                        <label>Name</label>
+                        <input class="form-control" name="name"  value=""  />
                     </div>
-                    <button type="submit" class="btn btn-default">Category Add</button>
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input class="form-control" name="amount" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input class="form-control" name="price" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Sale</label>
+                        <input class="form-control" name="sale" />
+                    </div>
+                    <div class="form-group">
+                        <label>Size</label>
+                        <label class="radio-inline">
+                            <input name="size" value="1" checked type="radio">L
+                        </label>
+                        <label class="radio-inline">
+                            <input name="size" value="2" type="radio">M
+                        </label>
+                        <label class="radio-inline">
+                            <input name="size" value="3" type="radio">XL
+                        </label>
+                        <label class="radio-inline">
+                            <input name="size" value="4" type="radio">XXL
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Color</label>
+                        <label class="radio-inline">
+                            <input name="color" value="1" checked="" type="radio">White
+                        </label>
+                        <label class="radio-inline">
+                            <input name="color" value="2" type="radio">Black
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" rows="3" name="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Images</label>
+                        <input type="file" name="image">
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <textarea id="demo" class="ckeditor" name="content_product"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-default">Product Add</button>
                     <button type="reset" class="btn btn-default">Reset</button>
                 </form>
             </div>
-
         </div>
         <!-- /.row -->
     </div>
-
+    <!-- /#page-wrapper -->
 @endsection

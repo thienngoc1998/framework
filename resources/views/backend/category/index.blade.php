@@ -28,8 +28,8 @@
                     <td>{{$category->id}}</td>
                     <td>{{$category->name}}</td>
                     <td>{{$category->active}}</td>
-                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"  data-toggle="modal" data-target="#modalDelete" data-delete-url="{{route('destroy-category', $category->id)}}"> Delete</a></td>
-                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('edit-category',$category->id)}}">Edit</a></td>
+                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"  data-toggle="modal" data-target="#modalDelete" data-delete-url="{{route('destroy-category', $category->id)}}">{{__('button.delete')}}</a></td>
+                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('edit-category',$category->id)}}">{{__('button.edit')}}</a></td>
                 </tr>
                     @endforeach
                 </tbody>

@@ -6,32 +6,34 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Category
-                    <small>List</small>
+                <h1 class="page-header">{{__('backend.product')}}
+                    <small>{{__('backend.title')}}</small>
                 </h1>
-                <a href="{{route('create-product')}}" class="btn btn-success" style="margin-bottom: 20px;">Create</a>
+                <a href="{{route('create-product')}}" class="btn btn-success" style="margin-bottom: 20px;">{{__('button.create')}}</a>
             </div>
             <!-- /.col-lg-12 -->
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
-                <tr align="center">
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th>Delete</th>
-                    <th>Edit</th>
+                <tr align="center" >
+                    <th class="text-center">{{__('heading.id')}}</th>
+                    <th class="text-center">{{__('heading.image')}}</th>
+                    <th class="text-center">{{__('heading.name')}}</th>
+                    <th class="text-center">{{__('heading.price')}}</th>
+                    <th class="text-center">{{__('button.delete')}}</th>
+                    <th class="text-center">{{__('button.edit')}}</th>
                 </tr>
                 </thead>
                 <tbody>
-{{--                @foreach($categories as $category)--}}
-{{--                <tr class="odd gradeX" align="center">--}}
-{{--                    <td>{{$category->id}}</td>--}}
-{{--                    <td>{{$category->name}}</td>--}}
-{{--                    <td>{{$category->active}}</td>--}}
-{{--                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"  data-toggle="modal" data-target="#modalDelete" data-delete-url="{{route('destroy-category', $category->id)}}"> Delete</a></td>--}}
-{{--                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>--}}
-{{--                </tr>--}}
-{{--                    @endforeach--}}
+                @foreach($products as $product)
+                <tr class="odd gradeX" align="center">
+                    <td>{{$product->id}}</td>
+                    <td><img src="upload/images/product/{{$product->img}}" alt="product " height="70px"/></td>
+                    <td>{{$product->name}}</td>
+                    <td>{{$product->price}}</td>
+                    <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"  data-toggle="modal" data-target="#modalDelete" data-delete-url="{{route('destroy-product', $product->id)}}"> {{__('button.delete')}}</a></td>
+                    <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{{route('detail-product',$product->id)}}">{{__('button.edit')}}</a></td>
+                </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

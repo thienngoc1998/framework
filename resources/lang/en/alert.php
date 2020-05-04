@@ -1,9 +1,7 @@
 <?php
 
 return [
-    'created' => 'Created Successfully',
-    'updated' => 'Updated Successfully',
-    'deletr' => 'Created Successfully',
-    'created' => 'Created Successfully',
-
+    'created' => 'Tạo mới thành công '  ,
+    'updated' => ' Sửa  thành công'  ,
+    'deleted' => ' Xoá thành công'  ,
 ];

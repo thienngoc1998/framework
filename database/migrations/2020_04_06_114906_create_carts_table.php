@@ -13,13 +13,19 @@ class CreateCartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('carts', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_user')->unsigned();
-            $table->string('delivery');
-            $table->string('note');
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->date('date of booking');
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('address')->nullable();
+            $table->string('qty');
+            $table->string('total');
+            $table->string('delivery')->default(2);
+            $table->string('note')->nullable();
+            $table->string('status')->default(1); // trạng thái đơn hàng
+            $table->integer('id_product')->unsigned();
+            $table->foreign('id_product')->references('id')->on('products');
             $table->timestamps();
         });
     }

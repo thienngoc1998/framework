@@ -13,6 +13,7 @@
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
                 <form action="{{route('store-product')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label>Category</label>
                         <select name="type_category" class="form-control">
@@ -74,7 +75,7 @@
                     </div>
                     <div class="form-group">
                         <label>Content</label>
-                        <textarea id="demo" class="ckeditor" name="content"></textarea>
+                        <textarea id="demo" class="ckeditor" name="content_product"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-default">Product Add</button>
