@@ -55,6 +55,7 @@ Route::prefix('admin/product')->group(function () {
     Route::post('',[ProductController::class,'store'])->name('store-product');
     Route::get('edit/{id}',[ProductController::class,'detail'])->name('detail-product');
     Route::get('/delete/{id}',[ProductController::class,'destroy'])->name('destroy-product');
+    Route::post('/update/{id}',[ProductController::class,'update'])->name('update-product');
 });
 
 

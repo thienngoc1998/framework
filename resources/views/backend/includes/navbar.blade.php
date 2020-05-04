@@ -9,7 +9,8 @@
 </div>
 <!-- /.navbar-header -->
 
-<ul class="nav navbar-top-links navbar-right">
+@if(auth()->check())
+    <ul class="nav navbar-top-links navbar-right">
     <!-- /.dropdown -->
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -28,4 +29,5 @@
     </li>
     <!-- /.dropdown -->
 </ul>
+@endif
 <!-- /.navbar-top-links -->
