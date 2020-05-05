@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\CreateCategoryRequest;
+use App\Http\Requests\CreateProductRequest;
 use App\Product;
 use App\Repositories\Product\ProductRepo;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class ProductController extends Controller
         return view('backend.product.create',compact('category'));
     }
 
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
         if ($request->hasFile('image'))
         {
@@ -62,7 +63,26 @@ class ProductController extends Controller
 
     public function detail($id)
     {
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         return view('backend.product.edit')->withProduct($product);
+    }
+
+    public function update(CreateProductRequest $request, $id)
+    {
+        $product = Product::findOrFail($id);
+        $data = $request->all();
+        $data['img'] = $product->img;
+
+        if ($request->hasFile('image')) {
+            $file = $request->image;
+            $file->move('upload/images/product', $file->getClientOriginalName());
+            $data['img'] = $file->getClientOriginalName();
+        }
+
+        if ($product->update($data)) {
+            return redirect()->route('product')->withFlashSuccess(__('alert.updated'));
+        }
+
+        return redirect()->back();
     }
 }
