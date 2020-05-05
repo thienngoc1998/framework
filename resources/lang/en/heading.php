@@ -12,4 +12,6 @@ return [
   'new' => 'Nổi bật '  ,
   'qty' => ' Số lượng '  ,
   'total' => ' Tổng'  ,
+  'description' => ' Mô tả'  ,
+  'title' => ' Tiêu đề'  ,
 ];
