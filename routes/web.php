@@ -60,11 +60,20 @@ Route::prefix('admin/product')->group(function () {
 
 Route::prefix('admin/user')->group(function () {
     Route::get('',[\App\Http\Controllers\UserController::class,'index'])->name('user');
-    Route::get('create',[\App\Http\Controllers\UserController::class,'create'])->name('create-user');
-    Route::post('',[\App\Http\Controllers\UserController::class,'store'])->name('store-user');
-    Route::get('edit/{id}',[\App\Http\Controllers\UserController::class,'edit'])->name('detail-user');
+    Route::get('/create',[\App\Http\Controllers\UserController::class,'create'])->name('create-user');
+    Route::post('/store',[\App\Http\Controllers\UserController::class,'store'])->name('store-user');
+    Route::get('/edit/{id}',[\App\Http\Controllers\UserController::class,'edit'])->name('detail-user');
     Route::get('/delete/{id}',[\App\Http\Controllers\UserController::class,'destroy'])->name('destroy-user');
     Route::post('/update/{id}',[\App\Http\Controllers\UserController::class,'update'])->name('update-user');
+});
+
+Route::prefix('admin/article')->group(function () {
+    Route::get('',[\App\Http\Controllers\ArticleController::class,'index'])->name('article');
+    Route::get('/create',[\App\Http\Controllers\ArticleController::class,'create'])->name('create-article');
+    Route::post('/store',[\App\Http\Controllers\ArticleController::class,'store'])->name('store-article');
+    Route::get('/edit/{id}',[\App\Http\Controllers\ArticleController::class,'edit'])->name('detail-article');
+    Route::get('/delete/{id}',[\App\Http\Controllers\ArticleController::class,'destroy'])->name('destroy-article');
+    Route::post('/update/{id}',[\App\Http\Controllers\ArticleController::class,'update'])->name('update-article');
 });
 
 

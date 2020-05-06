@@ -15,4 +15,5 @@ return [
     'cart' => ' Giỏ hàng ',
     'add-cart' => ' Mua hàng',
     'home' => ' Trang chủ ',
+    'article' => ' Tin tức ',
 ];
