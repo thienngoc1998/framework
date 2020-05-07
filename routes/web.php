@@ -46,7 +46,7 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
         Route::get('',[\App\Http\Controllers\CategoryController::class,'index'])->name('category');
         Route::get('create',[\App\Http\Controllers\CategoryController::class,'create'])->name('create-category');
         Route::post('',[\App\Http\Controllers\CategoryController::class,'store'])->name('store-category');
-        Route::get('/{id}',[\App\Http\Controllers\CategoryController::class,'destroy'])->name('destroy-category');
+        Route::get('/delete/{id}',[\App\Http\Controllers\CategoryController::class,'destroy'])->name('destroy-category');
         Route::get('edit/{id}',[\App\Http\Controllers\CategoryController::class,'edit'])->name('edit-category');
         Route::post('edit/{id}',[\App\Http\Controllers\CategoryController::class,'update'])->name('update-category');
     });
@@ -76,6 +76,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth'], function() {
         Route::get('/edit/{id}',[\App\Http\Controllers\ArticleController::class,'edit'])->name('detail-article');
         Route::get('/delete/{id}',[\App\Http\Controllers\ArticleController::class,'destroy'])->name('destroy-article');
         Route::post('/update/{id}',[\App\Http\Controllers\ArticleController::class,'update'])->name('update-article');
+    });
+    Route::prefix('order')->group(function () {
+        Route::get('',[\App\Http\Controllers\OrderController::class,'index'])->name('order');
+        Route::get('/delete/{id}',[\App\Http\Controllers\OrderController::class,'destroy'])->name('destroy-order');
     });
 });
 

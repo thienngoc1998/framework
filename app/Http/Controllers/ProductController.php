@@ -52,7 +52,7 @@ class ProductController extends Controller
         else {
             Product::create($request->all());
         }
-        return redirect()->route('product')->withFlashSuccess(__('alert.create'));
+        return redirect()->route('product')->withFlashSuccess(__('alert.created'));
     }
 
     public function destroy($id)

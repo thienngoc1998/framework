@@ -28,7 +28,7 @@ class CategoryController extends Controller
     public function store(CreateCategoryRequest $request)
     {
         $this->repo->create($request->all());
-        return redirect()->route('category')->withFlashSuccess(__('alert.updated'));
+        return redirect()->route('category')->withFlashSuccess(__('alert.created'));
     }
 
     public function issetActive ()
