@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="cart_product_list">
-                            <h3 class="cart_single_title">Discount Cupon</h3>
+                            <h3 class="cart_single_title"> {{__('backend.cart')}} </h3>
                             <div class="table-responsive-md">
                                 <table class="table">
                                     <thead>
@@ -73,20 +73,18 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="total_amount_area">
-                            <div class="cupon_box">
-                                <h3 class="cart_single_title">Discount Cupon</h3>
-                                <div class="cupon_box_inner">
-                                    <input type="text" placeholder="Enter your code here">
-                                    <button type="submit" class="btn btn-primary subs_btn">apply cupon</button>
-                                </div>
-                            </div>
+{{--                            <div class="cupon_box">--}}
+{{--                                <h3 class="cart_single_title">Discount Cupon</h3>--}}
+{{--                                <div class="cupon_box_inner">--}}
+{{--                                    <input type="text" placeholder="Enter your code here">--}}
+{{--                                    <button type="submit" class="btn btn-primary subs_btn">apply cupon</button>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
                             <div class="cart_totals">
-                                <h3 class="cart_single_title">Discount Cupon</h3>
+                                <h3 class="cart_single_title">Tổng cộng </h3>
                                 <div class="cart_total_inner">
                                     <ul>
-                                        <li><a href="#"><span>Cart Subtotal</span> <?php echo Cart::subtotal();?></a></li>
-                                        <li><a href="#"><span>Shipping</span> Free</a></li>
-                                        <li><a href="#"><span>Totals</span> $400.00</a></li>
+                                        <li><a href="#"><span>Tổng tiền :</span> <?php echo Cart::subtotal();?></a></li>
                                     </ul>
                                 </div>
                                 <a href="{{route('home-checkout')}}"

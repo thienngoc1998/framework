@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Category;
 use App\Comment;
 use App\Http\Requests\LoginRequest;
+use App\Order;
 use App\Product;
 use App\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -144,6 +146,30 @@ class HomeController extends Controller
 
     public function CheckoutOrder(Request $request)
     {
+        foreach (Cart::content() as $item)
+        {
+            Order::create([
+                'name' => $request->username,
+                'address' => $request->address,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'note' => $request->note,
+                'qty' => $item->qty,
+                'total' => $item->qty * $item->price,
+                'id_product' => $item->id,
+            ]);
+        }
+        Cart::destroy();
+        return redirect()->route('home-cart');
+    }
 
+    public function getArticles()
+    {
+        return view('frontend.article')->withArticles(Article::orderBy('id','desc')->paginate(6));
+    }
+
+    public function getDetailArticle($id)
+    {
+        return view('frontend.article-detail')->withArticle(Article::find($id));
     }
 }

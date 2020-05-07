@@ -32,12 +32,12 @@ class ArticleRequest extends FormRequest
             ],
             "description" => [
                 "nullable",
-                "min:50",
+                "min:5",
                 "unique:articles,description,{$this->id},id"
             ],
             "content" => [
                 "required",
-                "min:50",
+                "min:5",
                 "unique:articles,content,{$this->id},id"
             ],
             "image" => [
@@ -55,10 +55,10 @@ class ArticleRequest extends FormRequest
             "title.min" => "tieu de phai co do dai tu 5-255 ky tu",
             "title.max" => "tieu de phai co do dai tu 5-255 ky tu",
             "title.unique" => "tieu de da duoc su dung",
-            "description.min" => "mo ta phai co do dai tu 50 ky tu",
+            "description.min" => "mo ta phai co do dai tu 5 ky tu",
             "description.unique" => "mo ta da duoc su dung",
             "content.required" => "noi dung bai viet la bat buoc",
-            "content.min" => "noi dung phai co do dai tu 50 ky tu",
+            "content.min" => "noi dung phai co do dai tu 5 ky tu",
             "content.unique" => "noi dung da duoc su dung",
             "image.image" => "Image phai la anh",
             "image.mimes" => "Image phai la anh",

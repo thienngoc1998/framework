@@ -281,7 +281,46 @@ i:before {
   letter-spacing: .45px;
   padding-bottom: 20px;
 }
+.details {
+    padding: 89px 0 100px;
+    position: relative;
+    background: #fff;
+}
+.list-content .news-item {
+    margin-bottom: 30px;
+}
 
+.news-item {
+    position: relative;
+    box-shadow: 0 0 15px #cccccc57;
+    background: #fff;
+}
+
+.news-image {
+    overflow: hidden;
+}
+.news-content {
+    padding: 20px 25px 20px;
+    background: #fff;
+}
+
+.news-image img {
+    transition: all ease-in-out 0.5s;
+    width: 100%;
+}
+
+.review-item p.date, .news-content p.date {
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #fe4e37;
+}
+
+.news-content>a {
+    font-size: 12px;
+    font-weight: 500;
+    color: #fe4e37;
+}
 
 .login_title p {
   font-size: 14px;
@@ -295,7 +334,11 @@ i:before {
   text-align: center;
   padding-bottom: 50px;
 }
-
+.center-block {
+    display: block;
+    width: 50%;
+    margin: 20px auto 15px;
+}
 .contact_title h2 {
   font-size: 24px;
   font-family: "Poppins", sans-serif;

@@ -37,7 +37,7 @@
                 <a href="#"><i class="fa fa-users fa-fw"></i> {{__('backend.user')}}<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{route('user')}}">List User</a>
+                        <a href="{{route('user')}}">{{__('backend.title')}}</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
@@ -50,7 +50,7 @@
                 </a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{route('article')}}">List Articles</a>
+                        <a href="{{route('article')}}">{{__('backend.title')}}</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

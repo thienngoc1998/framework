@@ -64,10 +64,7 @@
                             <h2 class="reg_title">{{__('frontend.order')}}</h2>
                             <div class="payment_list">
                                 <div class="price_single_cost">
-                                    <h5>Mens Casual Shirt <span>$25.20</span></h5>
-                                    <h5>Mens Casual Shirt <span>$25.20</span></h5>
-                                    <h4>Cart Subtotal <span>$50.00</span></h4>
-                                    <h3><span class="normal_text">Order Totals</span> <span>$50.00</span></h3>
+                                    <h3><span class="normal_text">Tổng tiền : </span> <span><?php echo Cart::subtotal();?></span></h3>
                                 </div>
                                 <div id="accordion" role="tablist" class="price_method">
                                     <div class="card">
@@ -98,13 +95,13 @@
                                         </div>
                                         <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
                                             <div class="card-body">
-                                                Lorem Ipsum is simply dummy text of the print-ing and typesetting industry. Lorem Ipsum has been the industry's.
+                                                Thanh toán khi giao hàng
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" value="submit" class="btn subs_btn form-control">place order</button>
+                            <button type="submit" value="submit" class="btn subs_btn form-control">Đặt hàng </button>
                         </div>
                     </div>
                     </form>

@@ -1,85 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Khóa Học Lập Trình Laravel Framework 5.x Tại Khoa Phạm">
+    <meta name="author" content="">
 
-@extends('frontend.layout.index')
+    <title> Đăng nhập </title>
+    <base href="{{asset('')}}">
+    <!-- Bootstrap Core CSS -->
+    <link href="admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
-@section('content')
-<!--================Categories Banner Area =================-->
-<section class="solid_banner_area">
-    <div class="container">
-        <div class="solid_banner_inner">
-            <h3>LOgin</h3>
-            <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="track.html"> Đăng nhập </a></li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!--================End Categories Banner Area =================-->
+    <!-- MetisMenu CSS -->
+    <link href="admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
-<!--================login Area =================-->
-<section class="login_area p_100">
-    <div class="container">
-        <div class="login_inner">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="login_title">
-                        <h2>log in your account</h2>
-                        <p>Log in to your account to discovery all great features in this template.</p>
-                    </div>
-                    <form class="login_form row" method="POST" action="{{route('user.login-customer')}}">
+    <!-- Custom CSS -->
+    <link href="admin/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            @include('includes.messages')
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Đăng nhập </h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="{{route('user.login-customer')}}" method="POST">
                         @csrf
-                        <div class="col-lg-12 form-group">
-                            <input class="form-control" type="email" placeholder="Email" id="email-login">
-                        </div>
-                        <div class="col-lg-12 form-group">
-                            <input class="form-control" type="password" placeholder="Password" id="password-login">
-                        </div>
-                        <div class="col-lg-12 form-group">
-                            <div class="creat_account">
-                                <input type="checkbox" id="f-option" name="selector">
-                                <label for="f-option">Keep me logged in</label>
-                                <div class="check"></div>
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="E-mail" name="email"  value="{{old('email')}}" type="email" autofocus>
                             </div>
-                            <h4>Quên mật khẩu ?</h4>
-                        </div>
-                        <div class="col-lg-12 form-group">
-                            <button type="submit" class="btn update_btn form-control btn-login">{{__('backend.login')}}</button>
-                        </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Mật khâủ " name="password" type="password">
+                            </div>
+                            <a href="">Nếu chưa có tài khoản </a>
+                            <button type="submit" class="btn btn-lg btn-success btn-block"> Đăng nhập </button>
+                        </fieldset>
                     </form>
                 </div>
-{{--                <div class="col-lg-8">--}}
-{{--                    <div class="login_title">--}}
-{{--                        <h2>create account</h2>--}}
-{{--                        <p>Follow the steps below to create email account enjoy the great mail.com emailing experience. Vivamus tempus risus vel felis condimentum, non vehicula est iaculis.</p>--}}
-{{--                    </div>--}}
-{{--                    <form class="login_form row">--}}
-{{--                        <div class="col-lg-6 form-group">--}}
-{{--                            <input class="form-control" type="text" placeholder="Name">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-6 form-group">--}}
-{{--                            <input class="form-control" type="email" placeholder="Email">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-6 form-group">--}}
-{{--                            <input class="form-control" type="text" placeholder="User Name">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-6 form-group">--}}
-{{--                            <input class="form-control" type="text" placeholder="Phone">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-6 form-group">--}}
-{{--                            <input class="form-control" type="password" placeholder="Password">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-6 form-group">--}}
-{{--                            <input class="form-control" type="password" placeholder="Re-Password">--}}
-{{--                        </div>--}}
-{{--                        <div class="col-lg-6 form-group">--}}
-{{--                            <button  class="btn subs_btn form-control btn-register">register now</button>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
             </div>
         </div>
     </div>
-</section>
-<!--================End login Area =================-->
-@endsection
+</div>
+
+<!-- jQuery -->
+<script src="admin/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="admin/dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
 

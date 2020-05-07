@@ -17,6 +17,7 @@ class AdminController extends Controller
         $array = [
             'email' => $request->email,
             'password' => $request->password,
+            'role' => 1
         ];
         if (Auth::attempt($array))
         {

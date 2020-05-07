@@ -13,7 +13,7 @@ class UserController extends Controller
         $users = User::where('id', '<>', 1)
             ->where('id', '<>', auth()->id())
             ->orderBy('id', 'DESC')
-            ->paginate(50);
+            ->paginate(5);
 
         return view('backend.user.index', compact('users'));
     }

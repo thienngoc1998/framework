@@ -3,12 +3,12 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="c_product_img">
-                    <img class="img-fluid" src="upload/images/product/{{$product->img}}" alt="">
+                    <a href="{{route('home-detail-product',$product->id)}}"><img class="img-fluid" src="upload/images/product/{{$product->img}}" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-8 col-md-6">
                 <div class="c_product_text">
-                    <h3>{{$product->name}}</h3>
+                    <h3><a href="{{route('home-detail-product',$product->id)}}">{{$product->name}}</a></h3>
                     <h5>{{$product->price}}</h5>
                     <ul class="product_rating">
                         @if($product->star == 1)

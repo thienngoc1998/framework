@@ -120,7 +120,24 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
+        $('.add_cart_btn').click(function (e) {
+            var url = $(this).data('url');
+            addCart(url);
+        });
+
     });
+    function addCart(url) {
+        $.ajax({
+            type: 'get',
+            url: url,
+            data: {},
+            success: function (data) {
+                getTotalItemCarts();
+                toastr.success(data.message);
+            }
+        })
+    }
 </script>
 
 @yield('script')

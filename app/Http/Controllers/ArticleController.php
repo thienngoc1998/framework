@@ -11,7 +11,7 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::orderBy('id', 'DESC')
-            ->paginate(50);
+            ->paginate(5);
 
         return view('backend.article.index', compact('articles'));
     }
@@ -49,7 +49,7 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
         $data = $request->all();
-        $data['id_user'] = auth()->id();
+        $data['id_user'] = 1;
         $data['img'] = $article->img;
         if ($request->hasFile('img')) {
             $file = $request->img;

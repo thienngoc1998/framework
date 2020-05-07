@@ -173,7 +173,7 @@
                     <div class="l_p_text">
                         <ul>
                             <li class="p_icon"><a href="#"><i class="icon_piechart"></i></a></li>
-                            <li><a class="add_cart_btn" href="#">Add To Cart</a></li>
+                            <li><button class="add_cart_btn" data-url="{{route('add-cart',$product->id)}}" data-id="{{$product->id}}">{{__('backend.add-cart')}}</button></li>
                             <li class="p_icon"><a href="#"><i class="icon_heart_alt"></i></a></li>
                         </ul>
                         <h4>{{$product->name}}</h4>

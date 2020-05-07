@@ -155,32 +155,8 @@
                     <h6>Available In <span>Stock</span></h6>
                     <h4>${{$product->price}}</h4>
                     <p>{{$product->description}}</p>
-                    <div class="p_color">
-                        <h4 class="p_d_title">color <span>*</span></h4>
-                        <ul class="color_list">
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                            <li><a href="#"></a></li>
-                        </ul>
-                    </div>
-                    <div class="p_color">
-                        <h4 class="p_d_title">size <span>*</span></h4>
-                        <select class="selectpicker">
-                            <option>Select your size</option>
-                            <option>Select your size M</option>
-                            <option>Select your size XL</option>
-                        </select>
-                    </div>
                     <div class="quantity">
-                        <div class="custom">
-                            <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="icon_minus-06"></i></button>
-                            <input type="text" name="qty" id="sst" maxlength="12" value="01" title="Quantity:" class="input-text qty">
-                            <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;" class="increase items-count" type="button"><i class="icon_plus"></i></button>
-                        </div>
-                        <a class="add_cart_btn" href="#">add to cart</a>
+                        <button class="add_cart_btn" data-url="{{route('add-cart',$product->id)}}" data-id="{{$product->id}}">{{__('backend.add-cart')}}</button>
                     </div>
                     <div class="shareing_icon">
                         <h5>share :</h5>
@@ -191,37 +167,6 @@
                             <li><a href="#"><i class="social_instagram"></i></a></li>
                             <li><a href="#"><i class="social_youtube"></i></a></li>
                         </ul>
-                    </div>
-                </div>
-                <div class="product_table_details">
-                    <div class="table-responsive-md">
-                        <table class="table">
-                            <tbody>
-                            <tr>
-                                <th scope="row">Return Policy:</th>
-                                <td>
-                                    <h6>$24.01 International Priority Shipping to Bangladesh  via the Global Shipping Program </h6>
-                                    <h5>Item location:</h5>
-                                    <p>Edison, New Jersey, United States</p>
-                                    <h5>Ships to:</h5>
-                                    <p>United States and many other countries | See details</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Delivery:</th>
-                                <td>
-                                    <p>Estimated between <span>Fri. Dec. 30 and Thu. Jan. 5</span> <br /> Includes international tracking</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">Payments:</th>
-                                <td>
-                                    <a href="#"><img src="img/master-card.png" alt=""></a>
-                                    <p>Any international shipping and import charges are paid in part to Pitney Bowes Inc.</p>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>

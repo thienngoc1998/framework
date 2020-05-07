@@ -26,6 +26,11 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="admin/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+    <style>
+        .dataTables_info, .paging_simple_numbers {
+            display: none !important;
+        }
+    </style>
 </head>
 
 <body>

@@ -41,7 +41,11 @@
                         <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
                     </ul>
                     <ul class="top_right">
+                        @if(Auth::check())
+                            <li class="user"><a href="#">{{Auth::user()->name}}</a></li>
+                        @else
                         <li class="user"><a href="{{route('user.home-login')}}"><i class="icon-user icons"></i></a></li>
+                        @endif
                         <li class="cart"><a href="{{route('home-cart')}}"><i class="icon-handbag icons"></i></a></li>
                         <li class="h_price">
                             <select class="selectpicker">
@@ -78,7 +82,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="{{route('home-product')}}"> Sản phẩm </a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"> Bài viết </a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('home-get-article')}}"> Bài viết </a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html"> Liên hệ </a></li>
                 </ul>
             </div>
