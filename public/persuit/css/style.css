@@ -189,6 +189,8 @@ i:before {
     color: #efb504;
 }
 
+
+
 .list-sidebar-item.info-1{
     border: 1px solid #f1f1f1;
     padding: 20px;
@@ -320,6 +322,28 @@ i:before {
     font-size: 12px;
     font-weight: 500;
     color: #fe4e37;
+}
+
+textarea {
+
+}
+.comment-box {
+    width: 100%;
+}
+
+.comment-btn{
+    margin-top: 15px;
+}
+.comment-btn a.btn{
+    width: 100%;
+}
+.comment-box input,
+.comment-box textarea{
+    background: #fbfbfb;
+    border-radius: 0;
+    resize: vertical;
+    width: 50%;
+    height: 120px;
 }
 
 .login_title p {

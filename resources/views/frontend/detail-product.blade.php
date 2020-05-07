@@ -216,15 +216,25 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-            </div>
-            <div class="tab-pane fade" id="nav-info" role="tabpanel" aria-labelledby="nav-info-tab">
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-            </div>
-            <div class="tab-pane fade" id="nav-gur" role="tabpanel" aria-labelledby="nav-gur-tab">
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  Emo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-            </div>
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    <div class="comment-box">
+                        <h4>Ý kiến của bạn :</h4>
+                        <div class="row">
+                            <div class="textarea col-xs-12" style="width: 100%;">
+                                <textarea placeholder="Enter a message" id="comment-value"></textarea>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="comment-btn">
+                                    <a href="javascript:void(0)" class="btn btn-orange btn-comment" data-id="{{Auth::user()->id}}">Submit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <span> Ban phải đăng nhập để có thể bình luận  </span>
+                @endif
         </div>
+          </div>
     </div>
 </section>
 <!--================End Product Details Area =================-->
